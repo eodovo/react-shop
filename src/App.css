@@ -3,8 +3,10 @@
   padding: 0;
 }
 .Navbar {
-  background-color: #da291c !important;
+  background-color: #fff !important;
+  padding: 0;
 }
+
 body {
   background-color: #333;
   color: #fff;
@@ -25,29 +27,39 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 820px;
   width: 100%;
-  margin-bottom: 100px;
 }
 .row {
   text-align: center;
 }
-img {
-  display: inline-block;
-  width: 80%;
-  border-radius: 20px;
-  box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
-  transition: all 0.3s ease-in-out;
-}
-img:hover {
-  transform: scale(1.045);
-}
 
-dl dt {
-  margin-top: 2%;
-  font-size: 1.25rem;
+.logo {
+  display: block;
+  margin-top: 20px;
+  background: url(./images//logo.png) 0 0 no-repeat;
+  background-size: 120px 70px;
+  width: 200px;
+  height: 70px;
+
+  background-position: center;
+  text-indent: -9999px;
+  overflow: hidden;
 }
-dl dd {
-  margin-top: 2%;
-  letter-spacing: -1px;
+h2 {
+  line-height: 2em;
+}
+.menu,
+.about {
+  transition: all 0.4s ease-in;
+  line-height: 2.5em;
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 40px;
+  padding-top: 10px;
+}
+.menu:hover,
+.about:hover {
+  color: #da291c;
 }
