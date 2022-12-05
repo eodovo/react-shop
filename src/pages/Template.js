@@ -21,7 +21,7 @@ function Template() {
             //객체배열 인덱싱하기
             return (
               <div className="col-md-4" key={i}>
-                <img src={title[i].img} alt="pizza_img" />
+                <img src={title[i].img} alt="pizza_img" className="product" />
                 <dl>
                   <dt>{title[i].title}</dt>
                   <dd>{title[i].content}</dd>

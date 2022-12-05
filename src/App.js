@@ -1,7 +1,11 @@
 import "./App.css";
-import Template from "./pages/Template";
+import Event from "./pages/Event";
+import Event1 from "./pages/Event1";
+import Event2 from "./pages/Event2";
+import Event3 from "./pages/Event3";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Routes, Route, Nav, Link, useNavigate, Outlet } from "react-router-dom";
+import Template from "./pages/Template";
 function App() {
   let navigate = useNavigate();
 
@@ -24,7 +28,7 @@ function App() {
                 }}
                 className="menu"
               >
-                <h2>MENU</h2>
+                <h2 className="navMenu">MENU</h2>
               </Nav.Link>
               <Nav.Link
                 onClick={() => {
@@ -32,17 +36,31 @@ function App() {
                 }}
                 className="about"
               >
-                <h2>ABOUT</h2>
+                <h2 className="navMenu">ABOUT</h2>
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => {
+                  navigate("/event");
+                }}
+                className="event"
+              >
+                <h2 className="navMenu">EVENT</h2>
               </Nav.Link>
             </Nav>
           </Container>
         </Navbar>
       </header>
+
       <Routes>
         <Route path="/" element={<div className="main-bg" />} />
         <Route path="/menu" element={<Template />} />
         <Route path="/about" element={<div>어바웃페이지임</div>} />
-        <Route path="*" element={<div>없는페이지임</div>} /> {/*404페이지 만들기 */}
+        <Route path="/event" element={<Event />}>
+          <Route path="event1" element={<Event1 />} />
+          <Route path="event2" element={<Event2 />} />
+          <Route path="event3" element={<Event3 />} />
+        </Route>
+        <Route path="*" element={<div>주소가 잘못되었습니다.</div>} /> {/*404페이지 만들기 */}
       </Routes>
     </div>
   );

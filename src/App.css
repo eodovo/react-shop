@@ -3,12 +3,12 @@
   padding: 0;
 }
 .Navbar {
-  background-color: #fff !important;
+  background-color: #da291c !important;
   padding: 0;
 }
 
 body {
-  background-color: #333;
+  background-color: #fab700;
   color: #fff;
   font-size: 16px;
 }
@@ -46,20 +46,26 @@ body {
   text-indent: -9999px;
   overflow: hidden;
 }
-h2 {
-  line-height: 2em;
+
+.navbar > .container {
+  justify-content: flex-start;
+  margin-left: -20px;
 }
-.menu,
-.about {
-  transition: all 0.4s ease-in;
-  line-height: 2.5em;
-  color: #333;
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 40px;
-  padding-top: 10px;
+.navMenu:hover {
+  color: #fff;
 }
-.menu:hover,
-.about:hover {
+
+.navMenu {
+  font-size: 2rem;
+  margin-top: 25px;
+  color: #fab700;
+  transition: all 0.5s ease;
+  margin-right: 13px;
+}
+
+.menuHeader {
+  font-size: 3rem;
+  text-align: center;
   color: #da291c;
+  margin-top: 50px;
 }

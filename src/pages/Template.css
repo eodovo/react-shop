@@ -1,33 +1,30 @@
 .template {
   margin-top: 50px;
 }
-h2 {
-  font-size: 3rem;
-  text-align: center;
-  color: #da291c;
-}
+
 p {
   font-size: 2.33rem;
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 50px;
 }
-img {
+.product {
   display: inline-block;
   width: 80%;
   border-radius: 20px;
   box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
   transition: all 0.3s ease-in-out;
 }
-img:hover {
+.product:hover {
   transform: scale(1.045);
 }
 
 dl dt {
   margin-top: 4%;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 dl dd {
   margin-top: 2%;
   letter-spacing: -1px;
+  font-size: 1.4rem;
 }
