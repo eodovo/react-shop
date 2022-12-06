@@ -6,9 +6,12 @@ import Event3 from "./pages/Event3";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Template from "./pages/Template";
+import TemplateDetail from "./pages/TemplateDetail";
+import data from "./components/data";
+import { useState } from "react";
 function App() {
+  const [title] = useState(data);
   let navigate = useNavigate();
-
   return (
     <div className="App">
       <header>
@@ -54,6 +57,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div className="main-bg" />} />
         <Route path="/menu" element={<Template />} />
+        <Route path="/menu/:id" element={<TemplateDetail title={title} />} />;
         <Route path="/about" element={<div>어바웃페이지임</div>} />
         <Route path="/event" element={<Event />}>
           <Route path="event1" element={<Event1 />} />

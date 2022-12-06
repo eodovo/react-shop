@@ -1,9 +1,19 @@
 import "./Template.css";
 import { useState } from "react";
 import data from "../components/data";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function Template() {
-  const [title] = useState(data); //데이터 값 불러오기
+  const [title, setTitle] = useState(data); //데이터 값 불러오기
+
+  function downPriceSort() {
+    //가격정렬 sort문법 안에 연산을 해야함.
+    return [...title].sort((a, b) => a.price - b.price);
+  }
+  function upPriceSort() {
+    return [...title].sort((a, b) => b.price - a.price);
+  }
 
   return (
     <div className="template">
@@ -16,16 +26,37 @@ function Template() {
             Taste the world's best pizza with a 50-year history!
           </p>
         </header>
+        <div className="sort col">
+          <Button
+            variant="outline-danger"
+            onClick={() => {
+              setTitle(upPriceSort());
+            }}
+          >
+            High price order
+          </Button>
+          <Button
+            variant="outline-danger"
+            onClick={() => {
+              setTitle(downPriceSort());
+            }}
+          >
+            Low price order
+          </Button>
+        </div>
         <div className="row">
-          {title.map((a, i) => {
+          {title.map((product) => {
             //객체배열 인덱싱하기
             return (
-              <div className="col-md-4" key={i}>
-                <img src={title[i].img} alt="pizza_img" className="product" />
+              <div className="col-md-4" key={product.id}>
+                <Link to={`/menu/${product.id}`}>
+                  {/*상세페이지 이동*/}
+                  <img src={product.img} alt="pizza_img" className="product" />
+                </Link>
                 <dl>
-                  <dt>{title[i].title}</dt>
-                  <dd>{title[i].content}</dd>
-                  <dd>${title[i].price.toLocaleString()}</dd> {/*세자리 수 쉼표처리*/}
+                  <dt>{product.title}</dt>
+                  <dd>{product.content}</dd>
+                  <dd>${product.price.toLocaleString()}</dd> {/*세자리 수 쉼표처리*/}
                 </dl>
               </div>
             );
@@ -35,4 +66,5 @@ function Template() {
     </div>
   );
 }
+
 export default Template;

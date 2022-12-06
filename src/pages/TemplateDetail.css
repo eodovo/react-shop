@@ -1,0 +1,42 @@
+.content {
+  margin-top: 100px;
+  justify-content: space-evenly;
+}
+
+.detailImageBox img {
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
+  transition: all 0.3s ease;
+  margin-bottom: 100px;
+}
+.detailImageBox img:hover {
+  transform: scale(1.034);
+}
+.detailText,
+.topping {
+  background-color: #009223;
+  color: #fff;
+  border-radius: 20px;
+}
+.detailText {
+  height: 300px;
+  margin-bottom: 50px;
+}
+.topping {
+  height: 200px;
+}
+.detailText dl {
+  text-align: center;
+}
+.detailText dt {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.detailText dd:nth-of-type(1) {
+  padding: 0 10%;
+}
+.btn-danger {
+  margin-top: 20px;
+}
