@@ -1,11 +1,12 @@
 import "./App.css";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import Event from "./pages/Event";
 import Event1 from "./pages/Event1";
 import Event2 from "./pages/Event2";
 import Event3 from "./pages/Event3";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
 import Template from "./pages/Template";
+import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
 import data from "./components/data";
 import { useState } from "react";
@@ -58,7 +59,7 @@ function App() {
         <Route path="/" element={<div className="main-bg" />} />
         <Route path="/menu" element={<Template />} />
         <Route path="/menu/:id" element={<TemplateDetail title={title} />} />;
-        <Route path="/about" element={<div>어바웃페이지임</div>} />
+        <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />}>
           <Route path="event1" element={<Event1 />} />
           <Route path="event2" element={<Event2 />} />

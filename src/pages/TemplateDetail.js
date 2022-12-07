@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import "./TemplateDetail.css";
+
 function TemplateDetail(props) {
   let { id } = useParams();
   const imgSrc = props.title[id].img;
