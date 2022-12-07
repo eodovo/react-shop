@@ -1,9 +1,9 @@
 import "./Template.css";
 import { useState } from "react";
-import data from "../components/data";
+import data from "../data/data";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-
+import axios from "axios";
 function Template() {
   const [title, setTitle] = useState(data); //데이터 값 불러오기
 
@@ -61,6 +61,22 @@ function Template() {
               </div>
             );
           })}
+          <Button
+            variant="outline-danger col-md-2 more"
+            onClick={() => {
+              axios
+                .get("https://raw.githubusercontent.com/eodovo/react-shop/main/src/components/data2.json")
+                .then((result) => {
+                  const moreProudct = [...title, ...result.data];
+                  setTitle(moreProudct);
+                })
+                .catch(() => {
+                  alert("데이터를 받는데에 실패했습니다.");
+                });
+            }}
+          >
+            MORE
+          </Button>
         </div>
       </div>
     </div>
