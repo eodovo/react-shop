@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/data/data2.json
 [
   {
     "id": 9,
@@ -21,3 +22,28 @@
     "price": 25900
   }
 ]
+=======
+[
+  {
+    "id": 9,
+    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/momo-mia-veg.5f34ea52c10db4a56881051692a618ca.1.jpg",
+    "title": "Momo Mia Pizza-Veg",
+    "content": "Epic combination of signature pan crust, delicious paneer & veg momos topped with spicy Schezwan sauce, onion, capsicum, sweet corn & 100% mozzarella",
+    "price": 31900
+  },
+  {
+    "id": 10,
+    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/only-cheesy-pan-personal.951dbe6ee07dafc48e04fe9a1bbe4ddb.1.jpg",
+    "title": "Only Cheesy",
+    "content": "Pizza topped with cheesy dressing and mozzarella cheese for that extraaa cheesy flavor.",
+    "price": 15900
+  },
+  {
+    "id": 11,
+    "img": "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/classic-sausage-pan-personal.fbbfbce57f62a8d8b366db5f66798704.1.jpg",
+    "title": "Classic Sausage",
+    "content": "Pizza topped with our Classic Pan sauce, flavorful chicken sausage and cheesy dressing.",
+    "price": 25900
+  }
+]
+>>>>>>> 02e35124e48e1becac00511cbe612c3a75eb83d4:src/components/data2.json
