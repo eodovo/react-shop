@@ -8,7 +8,7 @@ import Event3 from "./pages/Event3";
 import Template from "./pages/Template";
 import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
-import data from "./components/data";
+import data from "./data/data";
 import { useState } from "react";
 function App() {
   const [title] = useState(data);
@@ -65,7 +65,8 @@ function App() {
           <Route path="event2" element={<Event2 />} />
           <Route path="event3" element={<Event3 />} />
         </Route>
-        <Route path="*" element={<div>주소가 잘못되었습니다.</div>} /> {/*404페이지 만들기 */}
+        <Route path="*" element={<div>주소가 잘못되었습니다.</div>} />{" "}
+        {/*404페이지 만들기 */}
       </Routes>
     </div>
   );
