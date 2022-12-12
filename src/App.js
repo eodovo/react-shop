@@ -8,11 +8,15 @@ import Event3 from "./pages/Event3";
 import Template from "./pages/Template";
 import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
-import data from "./data/data";
-import { useState } from "react";
+// import data from "./data/data";
+
+// 상품 등록 과정
+// 1. 상품을 작성 후, 등록을 한다.
+// 2. 등록을 한 상품이 DB혹은 파일에 저장이되어야 한다.
+// 3. 그 저장이 된 정보를 가지고 상품 조회를 한다.
 
 function App() {
-  const [item] = useState(data);
+  // const [item] = useState(data);
   let navigate = useNavigate();
 
   return (
@@ -60,7 +64,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div className="main-bg" />} />
         <Route path="/menu" element={<Template />} />
-        <Route path="/menu/:id" element={<TemplateDetail item={item} />} />;
+        <Route path="/menu/:id" element={<TemplateDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />}>
           <Route path="event1" element={<Event1 />} />

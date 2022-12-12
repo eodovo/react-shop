@@ -1,3 +1,5 @@
+// DB라고 생각을 해보자.
+// Index와 ID의 값은 같다고 생각하자
 let data = [
   {
     id: 0,
@@ -60,7 +62,6 @@ let data = [
     content: "Spiced Paneer, Herbed Onion & Green Capsicum, Red Paprika",
     price: 21500,
   },
-
   {
     id: 8,
     img: "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/spiced-paneer.e577e25023a1baeb72b6381bf6692a73.1.jpg",

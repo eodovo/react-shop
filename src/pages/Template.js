@@ -64,10 +64,9 @@ function Template() {
           })}
           <Button
             variant="outline-danger col-md-2 more"
-            onClick={(e) => {
+            onClick={() => {
               countMoreBtn(moreBtn + 1);
               if (moreBtn >= 1) {
-                e.preventDefault();
                 alert("상품이 더이상 존재하지 않습니다.");
                 return false;
               }
@@ -79,7 +78,7 @@ function Template() {
                   setItem(moreProudct);
                 })
                 .catch(() => {
-                  alert("데이터를 받는데에   실패했습니다.");
+                  alert("데이터를 받는데에 실패했습니다.");
                 });
             }}
           >

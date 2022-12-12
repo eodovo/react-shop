@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import "./Event.css";
 function Event() {
   return (
-    <div className="row">
+    <div className="row gx-0">
       <h2 className="menuHeader">EVENT</h2>
       <p>Meet a variety of events!</p>
       <div className="eventBanner row">
