@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 function Template() {
-  const [title, setTitle] = useState(data); //데이터 값 불러오기
+  const [item, setItem] = useState(data); //데이터 값 불러오기
+  const [moreBtn, countMoreBtn] = useState(0);
 
   function downPriceSort() {
     //가격정렬 sort문법 안에 연산을 해야함.
-    return [...title].sort((a, b) => a.price - b.price);
+    return [...item].sort((a, b) => a.price - b.price);
   }
   function upPriceSort() {
-    return [...title].sort((a, b) => b.price - a.price);
+    return [...item].sort((a, b) => b.price - a.price);
   }
 
   return (
@@ -30,7 +31,7 @@ function Template() {
           <Button
             variant="outline-danger"
             onClick={() => {
-              setTitle(upPriceSort());
+              setItem(upPriceSort());
             }}
           >
             High price order
@@ -38,14 +39,14 @@ function Template() {
           <Button
             variant="outline-danger"
             onClick={() => {
-              setTitle(downPriceSort());
+              setItem(downPriceSort());
             }}
           >
             Low price order
           </Button>
         </div>
         <div className="row">
-          {title.map((product) => {
+          {item.map((product) => {
             //객체배열 인덱싱하기
             return (
               <div className="col-md-4" key={product.id}>
@@ -63,15 +64,22 @@ function Template() {
           })}
           <Button
             variant="outline-danger col-md-2 more"
-            onClick={() => {
+            onClick={(e) => {
+              countMoreBtn(moreBtn + 1);
+              if (moreBtn >= 1) {
+                e.preventDefault();
+                alert("상품이 더이상 존재하지 않습니다.");
+                return false;
+              }
+
               axios
-                .get("https://raw.githubusercontent.com/eodovo/react-shop/main/src/components/data2.json")
+                .get("https://raw.githubusercontent.com/eodovo/react-shop/main/src/data/data2.json")
                 .then((result) => {
-                  const moreProudct = [...title, ...result.data];
-                  setTitle(moreProudct);
+                  const moreProudct = [...item, ...result.data];
+                  setItem(moreProudct);
                 })
                 .catch(() => {
-                  alert("데이터를 받는데에 실패했습니다.");
+                  alert("데이터를 받는데에   실패했습니다.");
                 });
             }}
           >

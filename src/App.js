@@ -8,11 +8,13 @@ import Event3 from "./pages/Event3";
 import Template from "./pages/Template";
 import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
-import data from "./components/data";
+import data from "./data/data";
 import { useState } from "react";
+
 function App() {
-  const [title] = useState(data);
+  const [item] = useState(data);
   let navigate = useNavigate();
+
   return (
     <div className="App">
       <header>
@@ -58,7 +60,7 @@ function App() {
       <Routes>
         <Route path="/" element={<div className="main-bg" />} />
         <Route path="/menu" element={<Template />} />
-        <Route path="/menu/:id" element={<TemplateDetail title={title} />} />;
+        <Route path="/menu/:id" element={<TemplateDetail item={item} />} />;
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />}>
           <Route path="event1" element={<Event1 />} />

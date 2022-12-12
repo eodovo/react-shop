@@ -3,7 +3,7 @@ import "./TemplateDetail.css";
 
 function TemplateDetail(props) {
   let { id } = useParams();
-  const product = props.title[id];
+  const product = props.item[id];
   return (
     <div className="row gx-0 content">
       <div className="detailImageBox col-md-auto">
