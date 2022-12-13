@@ -50,7 +50,7 @@ function Template() {
             //객체배열 인덱싱하기
             return (
               <div className="col-md-4" key={product.id}>
-                <Link to={`/menu/${product.id}`}>
+                <Link to={`/react/menu/${product.id}`}>
                   {/*상세페이지 이동*/}
                   <img src={product.img} alt="pizza_img" className="product" />
                 </Link>

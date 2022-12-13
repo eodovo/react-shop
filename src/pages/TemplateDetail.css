@@ -17,6 +17,7 @@
   background-color: #009223;
   color: #fff;
   border-radius: 20px;
+  min-width: 551px;
 }
 .detailText {
   height: 300px;

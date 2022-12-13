@@ -3,6 +3,7 @@
 .eventBanner {
   display: flex;
   justify-content: space-evenly;
+  position: relative;
 }
 .eventBanner a {
   width: 500px;

@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+ul {
+  list-style: none;
+}
 .Navbar {
   background-color: #da291c !important;
   padding: 0;

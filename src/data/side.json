@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "img": "https://akamai.pizzahut.co.kr/2020pizzahut-prod/public/img/menu/RPSD0043_s.png",
+    "title": "Garlic sauce",
+    "price": 500
+  },
+  {
+    "id": 1,
+    "img": "https://akamai.pizzahut.co.kr/2020pizzahut-prod/public/img/menu/RPSD0045_s.png",
+    "title": "Corn Salad",
+    "price": 1200
+  },
+  {
+    "id": 2,
+    "img": "https://akamai.pizzahut.co.kr/2020pizzahut-prod/public/img/menu/RPSD0028_s.png",
+    "title": "Pickle",
+    "price": 500
+  },
+  {
+    "id": 3,
+    "img": "https://akamai.pizzahut.co.kr/2020pizzahut-prod/public/img/menu/RPBE1240_s.png",
+    "title": "Pepsi zero",
+    "price": 1400
+  }
+]

@@ -27,14 +27,14 @@ function App() {
             <Nav className="me-auto">
               <Nav.Link
                 onClick={() => {
-                  navigate("/");
+                  navigate("/react");
                 }}
               >
                 <h1 className="logo">Pizza shop</h1>
               </Nav.Link>
               <Nav.Link
                 onClick={() => {
-                  navigate("/menu");
+                  navigate("/react/menu");
                 }}
                 className="menu"
               >
@@ -42,7 +42,7 @@ function App() {
               </Nav.Link>
               <Nav.Link
                 onClick={() => {
-                  navigate("/about");
+                  navigate("/react/about");
                 }}
                 className="about"
               >
@@ -50,7 +50,7 @@ function App() {
               </Nav.Link>
               <Nav.Link
                 onClick={() => {
-                  navigate("/event");
+                  navigate("/react/event");
                 }}
                 className="event"
               >
@@ -62,14 +62,14 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<div className="main-bg" />} />
-        <Route path="/menu" element={<Template />} />
-        <Route path="/menu/:id" element={<TemplateDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/event" element={<Event />}>
-          <Route path="event1" element={<Event1 />} />
-          <Route path="event2" element={<Event2 />} />
-          <Route path="event3" element={<Event3 />} />
+        <Route path="/react" element={<div className="main-bg" />} />
+        <Route path="/react/menu" element={<Template />} />
+        <Route path="/react/menu/:id" element={<TemplateDetail />} />
+        <Route path="/react/about" element={<About />} />
+        <Route path="/react/event" element={<Event />}>
+          <Route path="/react/event/event1" element={<Event1 />} />
+          <Route path="/react/event/event2" element={<Event2 />} />
+          <Route path="/react/event/event3" element={<Event3 />} />
         </Route>
         <Route path="*" element={<div>주소가 잘못되었습니다.</div>} /> {/*404페이지 만들기 */}
       </Routes>
