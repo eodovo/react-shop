@@ -77,6 +77,7 @@ function Template() {
                   const moreProudct = [...item, ...result.data];
                   setItem(moreProudct);
                 })
+
                 .catch(() => {
                   alert("데이터를 받는데에 실패했습니다.");
                 });

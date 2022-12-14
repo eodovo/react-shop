@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useNavigate, Link } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Event from "./pages/Event";
 import Event1 from "./pages/Event1";
@@ -11,7 +11,7 @@ import TemplateDetail from "./pages/TemplateDetail";
 import mainImg from "./images/main.jpg";
 import logo from "./images/logo.png";
 import MainMenu from "./components/MainMenu";
-// import data from "./data/data";
+import ScrollToTop from "./components/ScrollTop";
 
 // 상품 등록 과정
 // 1. 상품을 작성 후, 등록을 한다.
@@ -19,7 +19,6 @@ import MainMenu from "./components/MainMenu";
 // 3. 그 저장이 된 정보를 가지고 상품 조회를 한다.
 
 function App() {
-  // const [item] = useState(data);
   let navigate = useNavigate();
 
   return (
@@ -71,15 +70,24 @@ function App() {
         </Navbar>
       </header>
 
+      <ScrollToTop />
       <Routes>
-        {/* <Route path="/react" element={<div className="main-bg" />} /> */}
+        {/* 메인 인덱스 엘리먼트 */}
         <Route
           path="/react"
           element={
             <div>
               <img src={mainImg} alt="main" className="mainImg" />
               <MainMenu />
-              <Link to="/react/menu">dd</Link>
+              {/* 메뉴 더보기 라우터 이동 */}
+              <Nav.Link
+                className="mainMore"
+                onClick={() => {
+                  navigate("/react/menu");
+                }}
+              >
+                MORE
+              </Nav.Link>
             </div>
           }
         />

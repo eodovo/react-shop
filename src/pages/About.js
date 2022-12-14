@@ -52,7 +52,6 @@ function About() {
           <dd className="col-md-7">He set up a small shop in the neighborhood, which had eight windows Here we go. Five windows with the word "PIZZA" on them After thinking about what to put on the three windows, Pizza shop was born.</dd>
         </dl>
       </div>
-      {/* <div className="bg"></div> */}
     </div>
   );
 }

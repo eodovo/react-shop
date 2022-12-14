@@ -14,6 +14,8 @@ body {
   background-color: #fab700;
   color: #fff;
   font-size: 16px;
+  padding-top: 150px;
+  /* body에 패딩 탑을 주어야 nav가 가리지 않음. */
 }
 
 .nav-link {
@@ -82,4 +84,17 @@ body {
 }
 .mainImg {
   width: 100%;
+}
+.mainMore {
+  position: absolute;
+  left: 50%;
+  margin-left: -65px;
+  font-size: 2rem;
+  padding: 0 20px;
+  border-radius: 20px;
+  background-color: #009223;
+  transition: all 0.3s ease;
+}
+.mainMore:hover {
+  transform: scale(1.08);
 }

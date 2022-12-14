@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import SideMenu from "./SideMenu";
+import SideMenu from "../components/SideMenu";
 import "./TemplateDetail.css";
 import data from "../data/data";
 import styled from "styled-components";
-
+import TemplateDetailTab from "../components/TemplateDetailTab";
 const TotalPrice = styled.dd`
   font-size: 2rem;
   font-weight: bold;
@@ -55,6 +55,7 @@ function TemplateDetail() {
           <SideMenu />
         </div>
       </div>
+      <TemplateDetailTab />
     </div>
   );
 }

@@ -8,6 +8,7 @@ const SideBox = styled.ul`
   border-radius: 20px;
   min-width: 551px;
   display: flex;
+  justify-content: center;
 `;
 
 const SideImg = styled.img`
