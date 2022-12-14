@@ -21,7 +21,7 @@ function Template() {
       <div className="container">
         <header>
           <h2 className="menuHeader">MENU</h2>
-          <p>
+          <p className="introSubtitle">
             The world's number one brand, Pizzashop!
             <br />
             Taste the world's best pizza with a 50-year history!

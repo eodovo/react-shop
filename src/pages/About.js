@@ -24,7 +24,7 @@ function About() {
   return (
     <div>
       <h2 className="menuHeader">ABOUT</h2>
-      <p>
+      <p className="introSubtitle">
         To be a customer's favorite place and the best way to enjoy food
         <br /> Pizza shop is working hard today.
       </p>

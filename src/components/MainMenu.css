@@ -1,0 +1,26 @@
+.carousel-caption {
+  position: static;
+  padding-top: 2.25rem;
+}
+.w-100 {
+  width: 40% !important;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #da291c;
+  opacity: 1;
+  border-radius: 40px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 1;
+}
+.introHeader {
+  margin-bottom: 40px;
+}

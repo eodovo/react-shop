@@ -15,11 +15,7 @@ body {
   color: #fff;
   font-size: 16px;
 }
-.navbar-brand {
-  font-size: 2rem;
-  margin-left: -200px;
-  font-weight: bold;
-}
+
 .nav-link {
   font-size: 1.2rem;
   font-weight: 600;
@@ -39,27 +35,21 @@ body {
 .logo {
   display: block;
   margin-top: 20px;
-  background: url(./images//logo.png) 0 0 no-repeat;
-  background-size: 120px 70px;
-  width: 200px;
-  height: 70px;
-
-  background-position: center;
-  text-indent: -9999px;
-  overflow: hidden;
+  width: 100px;
+}
+.logo img {
+  width: 100%;
+}
+.logo span {
+  display: none;
 }
 
-.navbar > .container {
-  justify-content: flex-start;
-  margin-left: -20px;
-}
 .navMenu:hover {
   color: #fff;
 }
 
 .navMenu {
   font-size: 2rem;
-  margin-top: 25px;
   color: #fab700;
   transition: all 0.5s ease;
   margin-right: 13px;
@@ -71,9 +61,25 @@ body {
   color: #da291c;
   margin-top: 50px;
 }
-p {
+.introSubtitle {
   font-size: 2.33rem;
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 50px;
+}
+
+.navbar-toggler {
+  border: 2px solid snow;
+}
+.navbar-toggler {
+  margin: 2% 0;
+}
+.navbar > .container {
+  flex-direction: column;
+}
+.menuHeader {
+  margin-top: 200px;
+}
+.mainImg {
+  width: 100%;
 }
