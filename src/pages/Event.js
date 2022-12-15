@@ -1,10 +1,20 @@
+import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 import "./Event.css";
 
-function Event() {
+function Event({ fadeAni }) {
+  const [fade, setFade] = useState("");
+  useEffect(() => {
+    setTimeout(() => {
+      setFade("end");
+    }, 100);
+    return () => {
+      setFade("");
+    };
+  }, [fadeAni]);
   return (
-    <div className="row gx-0">
+    <div className={"row gx-0 fadeAni " + fade}>
       <h2 className="menuHeader">EVENT</h2>
       <p className="introSubtitle">Meet a variety of events!</p>
       <div className="eventBanner row">

@@ -20,7 +20,7 @@ import ScrollToTop from "./components/ScrollTop";
 
 function App() {
   let navigate = useNavigate();
-
+  const ani = ""; //애니메이션 프롭스 넘기기
   return (
     <div className="App">
       <header>
@@ -39,7 +39,8 @@ function App() {
               </h1>
             </Nav.Link>
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-              <Nav>
+              {/* depth에 애니메이션 부여 */}
+              <Nav fadeAni={ani}>
                 <Nav.Link
                   onClick={() => {
                     navigate("/react/menu");

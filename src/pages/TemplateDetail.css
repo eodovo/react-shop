@@ -42,3 +42,12 @@
 .btn-danger {
   margin-top: 20px;
 }
+.fadeIn {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.end {
+  transform: translateX(0);
+  opacity: 1;
+  transition: div 0.5s;
+}

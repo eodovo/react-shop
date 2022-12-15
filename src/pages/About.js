@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
 import manImg from "../images/man.jpg";
 import hut from "../images/hut.jpg";
 import restraunrant from "../images/restraurant.jpg";
 import styled from "styled-components";
 import "./About.css";
-
 const Img = styled.img`
   object-fit: cover;
   box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
@@ -20,9 +20,19 @@ const Section1subTitle = styled.dd`
   letter-spacing: -1px;
 `;
 
-function About() {
+function About({ fadeAni }) {
+  // 애니메이션 효과
+  const [fade, setFade] = useState("");
+  useEffect(() => {
+    setTimeout(() => {
+      setFade("end");
+    }, 100);
+    return () => {
+      setFade("");
+    };
+  }, [fadeAni]);
   return (
-    <div>
+    <div className={"fadeAni " + fade}>
       <h2 className="menuHeader">ABOUT</h2>
       <p className="introSubtitle">
         To be a customer's favorite place and the best way to enjoy food

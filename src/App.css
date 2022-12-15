@@ -98,3 +98,10 @@ body {
 .mainMore:hover {
   transform: scale(1.08);
 }
+.fadeAni {
+  opacity: 0;
+}
+.end {
+  opacity: 1;
+  transition: all 1s;
+}

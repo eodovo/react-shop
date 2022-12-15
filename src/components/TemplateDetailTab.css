@@ -9,3 +9,31 @@
 .nav-tabs .nav-link.active {
   color: #009223;
 }
+@media screen and (max-width: 1700px) {
+  .nav-tabs {
+    margin-top: 100px;
+  }
+}
+.Nutirition {
+  display: inline-flex;
+  margin-top: 100px;
+}
+.Nutirition th,
+.Nutirition td {
+  border: 2px solid wheat;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+.Nutirition tbody tr {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.76em;
+}
+.fade1 {
+  opacity: 0;
+}
+.end {
+  opacity: 1;
+  transition: all 1s;
+}

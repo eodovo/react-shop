@@ -1,23 +1,34 @@
 import "./Template.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../data/data";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-function Template() {
+function Template({ fadeAni }) {
   const [item, setItem] = useState(data); //데이터 값 불러오기
   const [moreBtn, countMoreBtn] = useState(0);
 
+  //가격정렬 sort문법 안에 연산을 해야함.
   function downPriceSort() {
-    //가격정렬 sort문법 안에 연산을 해야함.
     return [...item].sort((a, b) => a.price - b.price);
   }
   function upPriceSort() {
     return [...item].sort((a, b) => b.price - a.price);
   }
 
+  // 애니메이션 효과
+  const [fade, setFade] = useState("");
+  useEffect(() => {
+    setTimeout(() => {
+      setFade("end");
+    }, 100);
+    return () => {
+      setFade("");
+    };
+  }, [fadeAni]);
+
   return (
-    <div className="template">
+    <div className={"template fadeAni " + fade}>
       <div className="container">
         <header>
           <h2 className="menuHeader">MENU</h2>
@@ -50,7 +61,7 @@ function Template() {
             //객체배열 인덱싱하기
             return (
               <div className="col-md-4" key={product.id}>
-                <Link to={`/react/menu/${product.id}`}>
+                <Link to={`/react/menu/${product.id}`} slide={item}>
                   {/*상세페이지 이동*/}
                   <img src={product.img} alt="pizza_img" className="product" />
                 </Link>
