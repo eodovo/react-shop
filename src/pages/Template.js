@@ -4,7 +4,7 @@ import data from "../data/data";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-function Template({ fadeAni }) {
+function Template({ fadeani }) {
   const [item, setItem] = useState(data); //데이터 값 불러오기
   const [moreBtn, countMoreBtn] = useState(0);
 
@@ -25,7 +25,7 @@ function Template({ fadeAni }) {
     return () => {
       setFade("");
     };
-  }, [fadeAni]);
+  }, [fadeani]);
 
   return (
     <div className={"template fadeAni " + fade}>

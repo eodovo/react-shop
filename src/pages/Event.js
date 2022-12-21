@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import "./Event.css";
 
-function Event({ fadeAni }) {
+function Event({ fadeani }) {
   const [fade, setFade] = useState("");
   useEffect(() => {
     setTimeout(() => {
@@ -12,7 +12,7 @@ function Event({ fadeAni }) {
     return () => {
       setFade("");
     };
-  }, [fadeAni]);
+  }, [fadeani]);
   return (
     <div className={"row gx-0 fadeAni " + fade}>
       <h2 className="menuHeader">EVENT</h2>

@@ -20,7 +20,7 @@ const Section1subTitle = styled.dd`
   letter-spacing: -1px;
 `;
 
-function About({ fadeAni }) {
+function About({ fadeani }) {
   // 애니메이션 효과
   const [fade, setFade] = useState("");
   useEffect(() => {
@@ -30,7 +30,7 @@ function About({ fadeAni }) {
     return () => {
       setFade("");
     };
-  }, [fadeAni]);
+  }, [fadeani]);
   return (
     <div className={"fadeAni " + fade}>
       <h2 className="menuHeader">ABOUT</h2>

@@ -12,6 +12,7 @@ import mainImg from "./images/main.jpg";
 import logo from "./images/logo.png";
 import MainMenu from "./components/MainMenu";
 import ScrollToTop from "./components/ScrollTop";
+import Cart from "./components/Cart";
 
 // 상품 등록 과정
 // 1. 상품을 작성 후, 등록을 한다.
@@ -40,7 +41,7 @@ function App() {
             </Nav.Link>
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
               {/* depth에 애니메이션 부여 */}
-              <Nav fadeAni={ani}>
+              <Nav fadeani={ani}>
                 <Nav.Link
                   onClick={() => {
                     navigate("/react/menu");
@@ -94,6 +95,7 @@ function App() {
         />
         <Route path="/react/menu" element={<Template />} />
         <Route path="/react/menu/:id" element={<TemplateDetail />} />
+        <Route path="/react/cart" element={<Cart />} />
         <Route path="/react/about" element={<About />} />
         <Route path="/react/event" element={<Event />}>
           <Route path="/react/event/event1" element={<Event1 />} />

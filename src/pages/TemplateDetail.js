@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SideMenu from "../components/SideMenu";
 import "./TemplateDetail.css";
 import data from "../data/data";
 import styled from "styled-components";
+import { addItem } from "../components/store";
 import TemplateDetailTab from "../components/TemplateDetailTab";
+import { useDispatch } from "react-redux";
 const TotalPrice = styled.dd`
   font-size: 2rem;
   font-weight: bold;
@@ -15,7 +17,8 @@ function TemplateDetail({ slide }) {
   let { id } = useParams();
   const [productItemList] = useState(data);
   const [item, setProductItem] = useState();
-
+  const dispatch = useDispatch();
+  const productInfo = productItemList[id];
   // 초기 실행
   useEffect(() => {
     // ID에 맞는 데이터를 가져오기
@@ -23,13 +26,11 @@ function TemplateDetail({ slide }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // 아이디를 가지고 데이터를 조회한다.
-
   // 상품 조회 API가 있을것 (현재는 파일쓰기로 함)
   // 그 API를 보통 상품의 PK가 존재하는데, 이 PK가 즉 위의 ID
   // 그것을 통해 데이터를 가지고 온다.
   // 1. API를 통해 상품을 조회한다.
   const getProductDetail = () => {
-    const productInfo = productItemList[id];
     // 스테이트에 세팅
     setProductItem(productInfo);
   };
@@ -57,7 +58,16 @@ function TemplateDetail({ slide }) {
             {/*옵셔널체이닝*/}
             <dd>{item?.content}</dd>
             <TotalPrice>${item?.price?.toLocaleString()}</TotalPrice>
-            <button className="btn btn-danger">ORDER!</button>
+            <Link to="/react/cart">
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  dispatch(addItem({ id: item?.id, title: item?.title, price: item?.price, count: 1 }));
+                }}
+              >
+                ORDER!
+              </button>
+            </Link>
           </dl>
         </div>
         <div className="topping col-md-auto">
