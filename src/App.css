@@ -23,13 +23,6 @@ body {
   font-weight: 600;
 }
 
-.main-bg {
-  background-image: url(./images/main.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 823px;
-}
 .row {
   text-align: center;
 }
@@ -104,4 +97,8 @@ body {
 .end {
   opacity: 1;
   transition: all 1s;
+}
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+  margin-left: 10px;
 }

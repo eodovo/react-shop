@@ -1,3 +1,41 @@
 .cartTable {
-  margin-top: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 50%;
+  color: #fff;
+  border: transparent;
+}
+.cartTable thead {
+  border-radius: 20px;
+  text-align: center;
+  font-size: 21px;
+  background-color: #da291c;
+}
+.cartBody td {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2em;
+  color: #333;
+}
+.cartBody button {
+  margin: 5px;
+}
+.cartBody button:nth-of-type(3) {
+  font-size: 24px;
+  float: right;
+}
+caption {
+  text-align: right;
+  caption-side: top;
+}
+.back {
+  margin-right: 20px;
+  width: 110px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > *,
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  color: #333;
+  border-bottom: 1px solid #333;
+  background-color: aliceblue;
+  --bs-table-striped-bg: rgba(0);
 }

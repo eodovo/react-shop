@@ -1,0 +1,16 @@
+.main {
+  position: relative;
+  width: 100% !important;
+  box-shadow: none;
+  border-radius: 0;
+}
+.caption {
+  position: absolute;
+  top: 34%;
+  padding-top: 0;
+  color: #c30d27;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: transparent;
+}

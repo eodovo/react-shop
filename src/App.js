@@ -8,11 +8,16 @@ import Event3 from "./pages/Event3";
 import Template from "./pages/Template";
 import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
-import mainImg from "./images/main.jpg";
 import logo from "./images/logo.png";
 import MainMenu from "./components/MainMenu";
 import ScrollToTop from "./components/ScrollTop";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import MainSlide from "./components/MainSlide";
+import Faq from "./components/Faq";
+import Gallery from "./components/Gallery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 // 상품 등록 과정
 // 1. 상품을 작성 후, 등록을 한다.
@@ -66,6 +71,16 @@ function App() {
                 >
                   <h2 className="navMenu">EVENT</h2>
                 </Nav.Link>
+                <Nav.Link
+                  onClick={() => {
+                    navigate("/react/cart");
+                  }}
+                >
+                  <h2 className="navMenu">
+                    CART
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                  </h2>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -79,7 +94,7 @@ function App() {
           path="/react"
           element={
             <div>
-              <img src={mainImg} alt="main" className="mainImg" />
+              <MainSlide />
               <MainMenu />
               {/* 메뉴 더보기 라우터 이동 */}
               <Nav.Link
@@ -90,6 +105,8 @@ function App() {
               >
                 MORE
               </Nav.Link>
+              <Gallery />
+              <Faq />
             </div>
           }
         />
@@ -104,8 +121,7 @@ function App() {
         </Route>
         <Route path="*" element={<div>주소가 잘못되었습니다.</div>} /> {/*404페이지 만들기 */}
       </Routes>
-
-      <></>
+      <Footer />
     </div>
   );
 }

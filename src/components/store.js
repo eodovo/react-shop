@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 let cart = createSlice({
@@ -27,12 +28,15 @@ let cart = createSlice({
         state.push(actions.payload);
       }
     },
+
     deleteItem(state, actions) {
       let copy = [...state];
       const data = copy.filter((data) => {
         return data.id !== actions.payload;
       });
-      return data;
+      if (confirm("Should I delete this pizza?") === true) {
+        return data;
+      }
     },
   },
 });

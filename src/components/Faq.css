@@ -1,0 +1,19 @@
+.faq {
+  margin-top: 100px;
+}
+.accordion {
+  --bs-accordion-bg: #009223;
+  width: 50%;
+  margin: 0 auto;
+}
+.accordion-button {
+  color: #fff;
+  font-size: 20px;
+}
+.accordion-item {
+  background-color: #fff;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #da291c;
+  color: #fff;
+}

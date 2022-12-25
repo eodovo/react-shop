@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import "./TemplateDetailTab.css";
 import Nav from "react-bootstrap/Nav";
-
+import styled from "styled-components";
+const Text = styled.p`
+  font-size: 2em;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid;
+  padding: 20px 0;
+`;
 function TemplateDetailTab() {
   let [tab, onChangeTab] = useState(0);
 
@@ -95,8 +103,12 @@ function Tabcontent({ tab }) {
               </tr>
             </tbody>
           </table>,
-          <div className="tabContent">1</div>,
-          <div className="tabContent">2</div>,
+          <div className="tabContent">
+            <Text>The price of premium pizza is based on no edge. The price of mania pizza is based on the original edge.</Text>
+          </div>,
+          <div className="tabContent">
+            <Text>Eggs, milk, soybeans, wheat, tomatoes, beef, shellfish (oysters),milk, wheat,Wheat, crustaceans, meat, fish, fruit, buckwheat, etc</Text>
+          </div>,
         ][tab]
       }
     </div>

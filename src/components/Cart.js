@@ -2,51 +2,85 @@ import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
 import "./Cart.css";
 import { increase, decrease, deleteItem } from "./store";
+import CloseButton from "react-bootstrap/CloseButton";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-function Cart() {
+function Cart({ fadeani }) {
+  const [fade, setFade] = useState("");
+  useEffect(() => {
+    setTimeout(() => {
+      setFade("end");
+    }, 100);
+    return () => {
+      setFade("");
+    };
+  }, [fadeani]);
   let basket = useSelector((state) => state);
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   return (
-    <div>
-      <Table className="cartTable" striped bordered hover>
+    <div className={"fadeAni " + fade}>
+      <Table className="cartTable" striped bordered>
+        <caption>
+          <Button
+            className="back"
+            variant="danger"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            Back
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => {
+              navigate(-2);
+            }}
+          >
+            Go to menu
+          </Button>
+        </caption>
         <thead>
           <tr>
-            <th>#</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>변경하기</th>
+            <th>Pizza number</th>
+            <th>Pizza</th>
+            <th>Price</th>
+            <th>Select Pizza Quantity</th>
+            <th>Option</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="cartBody">
           {basket.cart.map((bsk_item) => (
             <tr key={bsk_item.id}>
               <td>{bsk_item.id}</td>
               <td>{bsk_item.title}</td>
-              <td>{bsk_item.price}</td>
-              <td>{bsk_item.count}</td>
+              <td>${bsk_item.price.toLocaleString()}</td>
+              <td>{bsk_item.count}pizzas</td>
               <td>
-                <button
+                <Button
+                  variant="success"
                   onClick={() => {
                     dispatch(increase(bsk_item.id));
                   }}
                 >
-                  +
-                </button>
-                <button
+                  To add
+                </Button>
+                <Button
+                  variant="danger"
                   onClick={() => {
                     dispatch(decrease(bsk_item.id));
                   }}
                 >
-                  ----
-                </button>
-                <button
+                  To subtract
+                </Button>
+                <CloseButton
                   onClick={() => {
                     dispatch(deleteItem(bsk_item.id));
                   }}
-                >
-                  삭제
-                </button>
+                ></CloseButton>
               </td>
             </tr>
           ))}
