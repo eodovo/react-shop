@@ -45,10 +45,10 @@ function Cart({ fadeani }) {
         </caption>
         <thead>
           <tr>
-            <th>Pizza number</th>
-            <th>Pizza</th>
+            <th>Product code</th>
+            <th>Product name</th>
             <th>Price</th>
-            <th>Select Pizza Quantity</th>
+            <th>EA</th>
             <th>Option</th>
           </tr>
         </thead>
@@ -58,7 +58,7 @@ function Cart({ fadeani }) {
               <td>{bsk_item.id}</td>
               <td>{bsk_item.title}</td>
               <td>${bsk_item.price.toLocaleString()}</td>
-              <td>{bsk_item.count}pizzas</td>
+              <td>{bsk_item.count}EA</td>
               <td>
                 <Button
                   variant="success"

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import side from "../data/side.json";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { addItem } from "./store";
 
 const SideBox = styled.ul`
   background-color: #009223;
@@ -14,6 +16,11 @@ const SideBox = styled.ul`
 const SideImg = styled.img`
   width: 150px;
   display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 const Title = styled.p`
   font-size: 20px;
@@ -28,6 +35,7 @@ const Price = styled.span`
 `;
 
 function SideMenu() {
+  let dispatch = useDispatch();
   const [data] = useState(side);
 
   return (
@@ -36,7 +44,14 @@ function SideMenu() {
         return (
           <div key={item.id}>
             <li>
-              <SideImg src={item?.img} alt="side img" />
+              <SideImg
+                src={item?.img}
+                alt="side img"
+                onClick={() => {
+                  dispatch(addItem({ id: item?.id, title: item?.title, price: item?.price, count: 1 }));
+                }}
+              />
+
               <Title>{item?.title}</Title>
               <Price>${item?.price.toLocaleString()}</Price>
             </li>

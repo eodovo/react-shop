@@ -5,13 +5,13 @@ import card2 from "../images/card2.png";
 import card3 from "../images/card3.png";
 import styled from "styled-components";
 import "./Gallery.css";
+const IntroSubTitle = styled.p`
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 20px 0;
+  letter-spaicing: -1px;
+`;
 function Gallery() {
-  const IntroSubTitle = styled.p`
-    font-size: 1.8rem;
-    text-align: center;
-    margin: 20px 0;
-    letter-spaicing: -1px;
-  `;
   return (
     <div>
       <div className="introHeader">

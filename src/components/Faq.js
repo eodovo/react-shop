@@ -1,13 +1,13 @@
 import Accordion from "react-bootstrap/Accordion";
 import styled from "styled-components";
 import "./Faq.css";
+const IntroSubTitle = styled.p`
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 20px 0;
+  letter-spaicing: -1px;
+`;
 function Faq() {
-  const IntroSubTitle = styled.p`
-    font-size: 1.8rem;
-    text-align: center;
-    margin: 20px 0;
-    letter-spaicing: -1px;
-  `;
   return (
     <div>
       <div className="introHeader">

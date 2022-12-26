@@ -14,7 +14,7 @@ let cart = createSlice({
       let id = state.findIndex((a) => a.id === actions.payload);
       state[id].count--;
       if (state[id].count === 0) {
-        alert("한 판 이하는 불가능해요!");
+        alert("1EA 이하는 불가능해요!");
         return false;
       }
     },
@@ -27,6 +27,7 @@ let cart = createSlice({
       } else if (id <= -1) {
         state.push(actions.payload);
       }
+      console.log(state);
     },
 
     deleteItem(state, actions) {
@@ -41,10 +42,23 @@ let cart = createSlice({
   },
 });
 export let { increase, addItem, decrease, deleteItem } = cart.actions;
-
 //cart.actions = state 변경 함수들이 남음. 구조분해할당 문법 사용
+
+let sideMenu = createSlice({
+  name: "sideMenu",
+  initialState: [],
+  reducers: {
+    addSide(state, actions) {
+      let copy = [...state];
+      copy.push(actions.payload);
+      return console.log(copy);
+    },
+  },
+});
+export let { addSide } = sideMenu.actions;
 export default configureStore({
   reducer: {
     cart: cart.reducer,
+    sideMenu: sideMenu.reducer,
   },
 });
