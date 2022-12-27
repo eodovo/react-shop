@@ -8,7 +8,7 @@
 }
 .accordion-button {
   color: #fff;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 .accordion-item {
   background-color: #fff;
@@ -16,4 +16,9 @@
 .accordion-button:not(.collapsed) {
   background-color: #da291c;
   color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .accordion {
+    width: 100%;
+  }
 }

@@ -8,7 +8,7 @@
 .cartTable thead {
   border-radius: 20px;
   text-align: center;
-  font-size: 21px;
+  font-size: 1.5em;
   background-color: #da291c;
 }
 .cartBody td {
@@ -38,4 +38,32 @@ caption {
   border-bottom: 1px solid #333;
   background-color: aliceblue;
   --bs-table-striped-bg: rgba(0);
+}
+.SideImg {
+  width: 150px;
+}
+.SideBox {
+  min-width: 551px;
+}
+@media screen and (max-width: 767px) {
+  .cartTable {
+    width: 100%;
+  }
+  .cartTable thead th {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .cartBody button:nth-of-type(3) {
+    float: none;
+  }
+  .detailText,
+  .topping {
+    min-width: 0;
+  }
+  .SideBox {
+    min-width: 0;
+  }
+  .SideImg {
+    width: 100%;
+  }
 }

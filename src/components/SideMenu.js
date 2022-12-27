@@ -8,13 +8,11 @@ const SideBox = styled.ul`
   background-color: #009223;
   color: #fff;
   border-radius: 20px;
-  min-width: 551px;
   display: flex;
   justify-content: center;
 `;
 
 const SideImg = styled.img`
-  width: 150px;
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -39,12 +37,13 @@ function SideMenu() {
   const [data] = useState(side);
 
   return (
-    <SideBox>
+    <SideBox className="SideBox">
       {data.map((item) => {
         return (
           <div key={item.id}>
             <li>
               <SideImg
+                className="SideImg"
                 src={item?.img}
                 alt="side img"
                 onClick={() => {

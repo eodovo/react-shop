@@ -30,7 +30,7 @@ body {
 .logo {
   display: block;
   margin-top: 20px;
-  width: 100px;
+  width: 9vw;
 }
 .logo img {
   width: 100%;
@@ -101,4 +101,9 @@ body {
 svg:not(:root).svg-inline--fa,
 svg:not(:host).svg-inline--fa {
   margin-left: 10px;
+}
+@media screen and (max-width: 767px) {
+  .carousel-fade {
+    margin-top: -19px;
+  }
 }

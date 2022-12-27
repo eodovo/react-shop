@@ -23,3 +23,27 @@
 .introHeader {
   margin-bottom: 40px;
 }
+.IntroSubTitle {
+  font-size: 1.8rem;
+}
+@media screen and (max-width: 767px) {
+  .w-100 {
+    width: 100% !important;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    display: none;
+  }
+  .IntroSubTitle {
+    font-size: 1.4rem;
+  }
+  .cardBox {
+    flex-wrap: wrap;
+  }
+  .cardBody {
+    margin-bottom: 5%;
+  }
+  .cardBody:hover {
+    transform: scale(1.02);
+  }
+}
