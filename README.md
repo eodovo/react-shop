@@ -32,7 +32,7 @@
 
 ### (01) 프로젝트 진행방식
   1. 프로젝트 생성 및 환경 설정
-  * create-react-app 을 통한 프로젝트 생성
+  * npx create-react-app 을 통한 프로젝트 생성
   * 필요한 라이브러리 설치  
   
   2. UI 디자인
@@ -43,3 +43,15 @@
   * 반복적인 html 구성이 예상될 때
   * 페이지 어디에서든 보이는 UI (header, footer)
   * 크기(size)가 큰 UI
+  
+## 03. 프로젝트 고찰
+  1. AXIOS로 데이터를 불러왔지만 상세페이지에서 확인이 안됨.
+  *  axios로 json 데이터(객체 3개)가 있는데 상품리스트에서는 확인되오나 상품 클릭 후 detail 페이지로 이동시 오류가 발생함.<br>
+     이유 -> detail 페이지에서 data.js를 이용하는데 이 json과 get으로 불러올 데이터가 같은 데이터가 아님.<br>
+     detail 페이지에서 data.js가 maping 되었기 때문에 axios로 불러온 데이터는 maping 밖의 데이터이기 때문에 위와 같은 오류가 발생했다.<br>
+     그 후 axios의 원리, promise의 원리를 이해하고 넘어감.
+     
+  2. state의 불변성 유지
+  * useState 훅을 사용후 변수를 재사용 할 일
+     
+
