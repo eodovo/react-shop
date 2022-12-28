@@ -9,7 +9,6 @@ const Img = styled.img`
   box-shadow: 10px 10px 10px 1px rgb(0 0 0 / 30%);
 `;
 const Section1TextBox = styled.dl`
-  width: 50%;
   text-align: left;
 `;
 const Section1Title = styled.dt`

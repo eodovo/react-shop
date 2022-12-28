@@ -38,6 +38,9 @@
   background-size: cover;
   background-attachment: fixed;
 }
+.Section1TextBox {
+  width: 50%;
+}
 @media screen and (max-width: 767px) {
   .Section1TextBox {
     width: 100%;

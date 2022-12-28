@@ -27,6 +27,7 @@ let cart = createSlice({
       } else if (id <= -1) {
         state.push(actions.payload);
       }
+      console.log(state);
     },
 
     deleteItem(state, actions) {
@@ -43,8 +44,21 @@ let cart = createSlice({
 export let { increase, addItem, decrease, deleteItem } = cart.actions;
 //cart.actions = state 변경 함수들이 남음. 구조분해할당 문법 사용
 
+let sideMenu = createSlice({
+  name: "sideMenu",
+  initialState: [],
+  reducers: {
+    addSide(state, actions) {
+      let copy = [...state];
+      copy.push(actions.payload);
+      return console.log(copy);
+    },
+  },
+});
+export let { addSide } = sideMenu.actions;
 export default configureStore({
   reducer: {
     cart: cart.reducer,
+    sideMenu: sideMenu.reducer,
   },
 });

@@ -20,6 +20,7 @@ function Cart({ fadeani }) {
   let basket = useSelector((state) => state);
   let dispatch = useDispatch();
   let navigate = useNavigate();
+
   return (
     <div className={"fadeAni " + fade}>
       <Table className="cartTable" striped bordered>

@@ -9,6 +9,7 @@ const IntroPrice = styled.p`
   color: olivedrab;
 `;
 const IntroSubTitle = styled.p`
+  font-size: 1.8rem;
   text-align: center;
   margin: 20px 0;
   letter-spaicing: -1px;
@@ -24,7 +25,7 @@ function MainMenu() {
     <div>
       <div className="introHeader">
         <h2 className="menuHeader">MENU</h2>
-        <IntroSubTitle className="IntroSubTitle">Let me introduce the menu at the pizza shop</IntroSubTitle>
+        <IntroSubTitle>Let me introduce the menu at the pizza shop</IntroSubTitle>
       </div>
       <Carousel>
         {/* json 9개 데이터중 3개만 사용하여 맵핑 */}
@@ -35,7 +36,7 @@ function MainMenu() {
               <div>
                 <Carousel.Caption>
                   <IntroTitle>{item?.title}</IntroTitle>
-                  <IntroSubTitle className="IntroSubTitle">{item?.content}</IntroSubTitle>
+                  <IntroSubTitle>{item?.content}</IntroSubTitle>
                   <IntroPrice>$ {item?.price.toLocaleString()}</IntroPrice>
                 </Carousel.Caption>
               </div>
