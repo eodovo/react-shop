@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import SideMenu from "../components/SideMenu";
@@ -23,7 +24,6 @@ function TemplateDetail({ slide }) {
   useEffect(() => {
     // ID에 맞는 데이터를 가져오기
     getProductDetail();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // 아이디를 가지고 데이터를 조회한다.
   // 상품 조회 API가 있을것 (현재는 파일쓰기로 함)
@@ -45,7 +45,14 @@ function TemplateDetail({ slide }) {
       setAni("");
     };
   }, [slide]);
-
+  useEffect(() => {
+    let watchedId = localStorage.getItem("watched");
+    watchedId = JSON.parse(watchedId);
+    watchedId.push(id);
+    watchedId = new Set(watchedId);
+    watchedId = Array.from(watchedId);
+    localStorage.setItem("watched", JSON.stringify(watchedId));
+  }, [productInfo.id]);
   return (
     <div className={"row gx-0 content fadeIn " + ani}>
       <div className="detailImageBox col-md-auto">

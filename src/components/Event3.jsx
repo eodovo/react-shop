@@ -1,5 +1,5 @@
 import event3 from "../images/event3.jpg";
-import "./Event.css";
+import "../pages/Event.css";
 function Event3() {
   return (
     <div>

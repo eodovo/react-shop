@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Event from "./pages/Event";
-import Event1 from "./pages/Event1";
-import Event2 from "./pages/Event2";
-import Event3 from "./pages/Event3";
+import Event1 from "./components/Event1";
+import Event2 from "./components/Event2";
+import Event3 from "./components/Event3";
 import Template from "./pages/Template";
 import About from "./pages/About";
 import TemplateDetail from "./pages/TemplateDetail";
@@ -18,6 +18,7 @@ import Faq from "./components/Faq";
 import Gallery from "./components/Gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 // 상품 등록 과정
 // 1. 상품을 작성 후, 등록을 한다.
@@ -27,6 +28,16 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 function App() {
   let navigate = useNavigate();
   const ani = ""; //애니메이션 프롭스 넘기기
+
+  //localstorage 세팅
+  useEffect(() => {
+    const data = localStorage.setItem("watched", JSON.stringify([]));
+    return () => {
+      if (data?.length > 1) {
+        return false;
+      }
+    };
+  }, []);
   return (
     <div className="App">
       <header>

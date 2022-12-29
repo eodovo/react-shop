@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import data from "../data/data";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 function Template({ fadeani }) {
   const [item, setItem] = useState(data); //데이터 값 불러오기
+  let [title, setTitle] = useState([]);
   const [moreBtn, countMoreBtn] = useState(0);
 
   //가격정렬 sort문법 안에 연산을 해야함.
@@ -15,9 +17,9 @@ function Template({ fadeani }) {
   function upPriceSort() {
     return [...item].sort((a, b) => b.price - a.price);
   }
-
   // 애니메이션 효과
   const [fade, setFade] = useState("");
+
   useEffect(() => {
     setTimeout(() => {
       setFade("end");
@@ -26,6 +28,16 @@ function Template({ fadeani }) {
       setFade("");
     };
   }, [fadeani]);
+
+  useEffect(() => {
+    let recentId = localStorage.getItem("watched");
+    recentId = JSON.parse(recentId);
+    recentId = recentId.map(Number);
+    let copy = [...item];
+    let setId = copy.map((a) => a.id);
+    let checkId = setId.filter((id) => recentId.includes(id));
+    setTitle(checkId);
+  }, [item]);
 
   return (
     <div className={"template fadeAni " + fade}>
@@ -39,6 +51,17 @@ function Template({ fadeani }) {
           </p>
         </header>
         <div className="sort col">
+          <Dropdown>
+            <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
+              Recent Product
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {title.map((id) => (
+                <Dropdown.Item href={`/react/menu/${id}/`}>{item[id].title}</Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
           <Button
             variant="outline-danger"
             onClick={() => {
