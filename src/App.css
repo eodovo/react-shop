@@ -104,6 +104,6 @@ svg:not(:host).svg-inline--fa {
 }
 @media screen and (max-width: 767px) {
   .carousel-fade {
-    margin-top: -19px;
+    margin-top: -24px;
   }
 }

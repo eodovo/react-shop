@@ -41,3 +41,8 @@ dl dd {
 .more {
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .sort button {
+    font-size: 0.8rem;
+  }
+}

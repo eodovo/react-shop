@@ -58,7 +58,9 @@ function Template({ fadeani }) {
 
             <Dropdown.Menu>
               {title.map((id) => (
-                <Dropdown.Item href={`/react/menu/${id}/`}>{item[id].title}</Dropdown.Item>
+                <Dropdown.Item href={`/react/menu/${id}/`} key={item.id}>
+                  {item[id].title}
+                </Dropdown.Item>
               ))}
             </Dropdown.Menu>
           </Dropdown>

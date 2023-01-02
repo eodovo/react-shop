@@ -11,6 +11,9 @@ const SideBox = styled.ul`
   min-width: 551px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 767px) {
+    min-width: 0px;
+  }
 `;
 
 const SideImg = styled.img`
@@ -20,6 +23,10 @@ const SideImg = styled.img`
   transition: all 0.3s ease;
   &:hover {
     transform: scale(1.3);
+  }
+  @media screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 `;
 const Title = styled.p`
